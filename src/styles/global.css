@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit Variable', sans-serif;
+}
+
+.text-heading {
+  font-size: 1.875rem; /* text-3xl */
+  line-height: 2.25rem;
+}
+
+.text-body {
+  font-size: 1.125rem; /* text-lg */
+  line-height: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .text-heading {
+    font-size: 3rem; /* text-5xl */
+    line-height: 1;
+  }
+
+  .text-body {
+    font-size: 1.25rem; /* text-xl */
+    line-height: 1.75rem;
+  }
+}
+
+/* body {
+  font-family: var(--font-sans); */

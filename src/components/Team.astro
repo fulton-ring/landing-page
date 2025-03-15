@@ -1,0 +1,58 @@
+---
+import rajPhoto from "../assets/raj_photo.jpg";
+import jeremyPhoto from "../assets/jeremy_photo.jpg";
+
+import LandingSegmentLayout from "../layouts/LandingSegmentLayout.astro";
+---
+
+<LandingSegmentLayout>
+  <h2 class="text-2xl md:text-4xl font-semibold text-center mb-8">
+    Who We Are
+  </h2>
+
+  <div class="text-center mb-16">
+    <p class="text-gray-600 max-w-2xl mx-auto text-lg md:text-xl font-light">
+      We believe in end-to-end ownership. As founders, we don't just advise - we
+      roll up our sleeves and work alongside you to implement solutions from the
+      ground up.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-12">
+    <div class="flex flex-col items-center text-center">
+      <div class="w-48 h-48 mb-6 rounded-full bg-gray-200 overflow-hidden">
+        <a
+          href="https://www.linkedin.com/in/rajandes7/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={rajPhoto.src}
+            alt="Rajan Desai"
+            class="w-full h-full object-cover transition-all hover:grayscale"
+          />
+        </a>
+      </div>
+      <h3 class="text-lg md:text-2xl font-semibold mb-2">Rajan Desai</h3>
+      <p class="text-gray-400 mb-4 font-light">Data Scientist</p>
+    </div>
+
+    <div class="flex flex-col items-center text-center">
+      <div class="w-48 h-48 mb-6 rounded-full bg-gray-200 overflow-hidden">
+        <a
+          href="https://www.linkedin.com/in/jeremy-herzog/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={jeremyPhoto.src}
+            alt="Jeremy Herzog"
+            class="w-full h-full object-cover transition-all hover:grayscale"
+          />
+        </a>
+      </div>
+      <h3 class="text-lg md:text-2xl font-semibold mb-2">Jeremy Herzog</h3>
+      <p class="text-gray-400 mb-4 font-light">Software Engineer</p>
+    </div>
+  </div>
+</LandingSegmentLayout>
