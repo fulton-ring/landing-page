@@ -1,6 +1,6 @@
 ---
 import LandingSegmentLayout from "../layouts/LandingSegmentLayout.astro";
-import CapabilityCard from "./CapabilityCard.astro";
+import CapabilityCard from "./CapabilityCard";
 
 const capabilities: Array<{
   number: string;
@@ -87,7 +87,9 @@ const capabilities: Array<{
 <LandingSegmentLayout>
   <div class="py-20" id="capabilities">
     <div class="text-center mb-16">
-      <span class="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-sm font-mono tracking-wider mb-6">
+      <span
+        class="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-sm font-mono tracking-wider mb-6"
+      >
         CORE CAPABILITIES
       </span>
       <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -95,19 +97,91 @@ const capabilities: Array<{
         <span class="gradient-text">At Scale</span>
       </h2>
       <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light">
-        We build custom analytics tools that preserve, restore, and transform fragmented organizational data into cohesive decision-making systems. Our technology-agnostic approach ensures your solutions are built on the right foundation for your specific needs.
+        We build custom analytics tools that preserve, restore, and transform
+        fragmented organizational data into cohesive decision-making systems.
+        Our technology-agnostic approach ensures your solutions are built on the
+        right foundation for your specific needs.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 items-stretch">
-      {capabilities.map((capability) => (
-        <CapabilityCard
-          number={capability.number}
-          title={capability.title}
-          description={capability.description}
-          bulletPoints={capability.bulletPoints}
-        />
-      ))}
+    <div
+      class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 items-stretch"
+      id="capabilities-grid"
+    >
+      {
+        capabilities.map((capability) => (
+          <CapabilityCard
+            number={capability.number}
+            title={capability.title}
+            description={capability.description}
+            bulletPoints={capability.bulletPoints}
+          />
+        ))
+      }
     </div>
   </div>
 </LandingSegmentLayout>
+
+<script>
+  // Equalize card section heights to align bullet points across all cards
+  function equalizeCapabilityHeights() {
+    // Equalize title heights
+    const titles = document.querySelectorAll(".capability-title");
+
+    if (titles.length > 0) {
+      titles.forEach((title) => {
+        (title as HTMLElement).style.height = "auto";
+      });
+
+      let maxTitleHeight = 0;
+      titles.forEach((title) => {
+        const height = (title as HTMLElement).getBoundingClientRect().height;
+        if (height > maxTitleHeight) {
+          maxTitleHeight = height;
+        }
+      });
+
+      titles.forEach((title) => {
+        (title as HTMLElement).style.height = `${maxTitleHeight}px`;
+      });
+    }
+
+    // Equalize description container heights (the flex-grow area)
+    const descriptionContainers = document.querySelectorAll(
+      ".capability-description"
+    );
+
+    if (descriptionContainers.length > 0) {
+      // Find the maximum height needed for descriptions
+      let maxDescHeight = 0;
+      descriptionContainers.forEach((desc) => {
+        (desc as HTMLElement).style.height = "auto";
+      });
+
+      descriptionContainers.forEach((desc) => {
+        const height = (desc as HTMLElement).getBoundingClientRect().height;
+        if (height > maxDescHeight) {
+          maxDescHeight = height;
+        }
+      });
+
+      descriptionContainers.forEach((desc) => {
+        (desc as HTMLElement).style.height = `${maxDescHeight}px`;
+      });
+    }
+  }
+
+  // Run on load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", equalizeCapabilityHeights);
+  } else {
+    equalizeCapabilityHeights();
+  }
+
+  // Re-equalize on window resize
+  let resizeTimeout: ReturnType<typeof setTimeout>;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(equalizeCapabilityHeights, 250);
+  });
+</script>

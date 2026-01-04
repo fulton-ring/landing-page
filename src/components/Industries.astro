@@ -1,6 +1,6 @@
 ---
 import LandingSegmentLayout from "../layouts/LandingSegmentLayout.astro";
-import IndustryCard from "./IndustryCard.astro";
+import IndustryCard from "./IndustryCard";
 
 const industries: Array<{
   iconName: "Zap" | "Factory" | "Home" | "Shield" | "Store" | "MapPin";
@@ -106,10 +106,12 @@ const industries: Array<{
 
     <div
       class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto px-4"
+      id="industries-grid"
     >
       {
         industries.map((industry) => (
           <IndustryCard
+            client:load
             iconName={industry.iconName}
             title={industry.title}
             description={industry.description}
@@ -120,3 +122,64 @@ const industries: Array<{
     </div>
   </div>
 </LandingSegmentLayout>
+
+<script>
+  // Equalize industry card section heights to align bullet points across all cards
+  function equalizeIndustryHeights() {
+    // Equalize title heights
+    const titles = document.querySelectorAll(".industry-title");
+
+    if (titles.length > 0) {
+      titles.forEach((title) => {
+        (title as HTMLElement).style.height = "auto";
+      });
+
+      let maxTitleHeight = 0;
+      titles.forEach((title) => {
+        const height = (title as HTMLElement).getBoundingClientRect().height;
+        if (height > maxTitleHeight) {
+          maxTitleHeight = height;
+        }
+      });
+
+      titles.forEach((title) => {
+        (title as HTMLElement).style.height = `${maxTitleHeight}px`;
+      });
+    }
+
+    // Equalize description heights
+    const descriptions = document.querySelectorAll(".industry-description");
+
+    if (descriptions.length > 0) {
+      descriptions.forEach((desc) => {
+        (desc as HTMLElement).style.height = "auto";
+      });
+
+      let maxDescHeight = 0;
+      descriptions.forEach((desc) => {
+        const height = (desc as HTMLElement).getBoundingClientRect().height;
+        if (height > maxDescHeight) {
+          maxDescHeight = height;
+        }
+      });
+
+      descriptions.forEach((desc) => {
+        (desc as HTMLElement).style.height = `${maxDescHeight}px`;
+      });
+    }
+  }
+
+  // Run on load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", equalizeIndustryHeights);
+  } else {
+    equalizeIndustryHeights();
+  }
+
+  // Re-equalize on window resize
+  let resizeTimeout: ReturnType<typeof setTimeout>;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(equalizeIndustryHeights, 250);
+  });
+</script>

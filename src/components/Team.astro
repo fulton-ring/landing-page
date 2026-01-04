@@ -3,7 +3,7 @@ import rajPhoto from "../assets/raj_photo.jpg";
 import jeremyPhoto from "../assets/jeremy_photo.jpg";
 import LandingSegmentLayout from "../layouts/LandingSegmentLayout.astro";
 import Founder from "./Founder.astro";
-import FeatureItem from "./FeatureItem.astro";
+import FeatureItem from "./FeatureItem";
 ---
 
 <LandingSegmentLayout>
@@ -69,16 +69,19 @@ import FeatureItem from "./FeatureItem.astro";
         </p>
         <div class="grid md:grid-cols-3 gap-8">
           <FeatureItem
+            client:load
             iconName="check"
             title="Honest Advice"
             description="We'll tell you when something won't work. No sugar-coating, no billable hour padding."
           />
           <FeatureItem
+            client:load
             iconName="target"
             title="Aligned Incentives"
             description="Our success is tied to your outcomes, not our invoices. We win when you win."
           />
           <FeatureItem
+            client:load
             iconName="zap"
             title="Pragmatic Solutions"
             description="We'll tell you when you're overcomplicating things. Simple solutions that actually work."
