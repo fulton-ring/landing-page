@@ -1,56 +1,90 @@
 ---
 import rajPhoto from "../assets/raj_photo.jpg";
 import jeremyPhoto from "../assets/jeremy_photo.jpg";
-
 import LandingSegmentLayout from "../layouts/LandingSegmentLayout.astro";
+import Founder from "./Founder.astro";
+import FeatureItem from "./FeatureItem.astro";
 ---
 
 <LandingSegmentLayout>
-  <h2 class="text-2xl md:text-4xl font-light text-center mb-8">Who We Are</h2>
-
-  <div class="text-center mb-16">
-    <p class="text-gray-600 max-w-2xl mx-auto text-lg md:text-xl font-light">
-      We believe in end-to-end ownership. As founders, we don't just advise - we
-      roll up our sleeves and work alongside you to implement solutions from the
-      ground up.
-    </p>
-  </div>
-
-  <div class="grid md:grid-cols-2 gap-12">
-    <div class="flex flex-col items-center text-center">
-      <div class="w-48 h-48 mb-6 rounded-full bg-gray-200 overflow-hidden">
-        <a
-          href="https://www.linkedin.com/in/rajandes7/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src={rajPhoto.src}
-            alt="Rajan Desai"
-            class="w-full h-full object-cover transition-all hover:grayscale"
-          />
-        </a>
-      </div>
-      <h3 class="text-lg md:text-xl font-light mb-2">Rajan Desai</h3>
-      <p class="text-gray-400 mb-4 font-light">Data Scientist</p>
+  <div class="py-20" id="team">
+    <div class="text-center mb-16">
+      <span
+        class="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-sm font-mono tracking-wider mb-6"
+      >
+        THE TEAM
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+        Built by Practitioners.<br />
+        <span class="gradient-text">Led by Founders.</span>
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light">
+        We're not consultants who parachute in and leave. As founders, we roll
+        up our sleeves and build alongside you. Every line of code, every model,
+        every decision—we own it end-to-end.
+      </p>
     </div>
 
-    <div class="flex flex-col items-center text-center">
-      <div class="w-48 h-48 mb-6 rounded-full bg-gray-200 overflow-hidden">
-        <a
-          href="https://www.linkedin.com/in/jeremy-herzog/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src={jeremyPhoto.src}
-            alt="Jeremy Herzog"
-            class="w-full h-full object-cover transition-all hover:grayscale"
+    <div class="grid md:grid-cols-2 gap-16 mb-16 text-center">
+      <Founder
+        name="Rajan Desai"
+        title="Co-Founder & CEO"
+        description="Rajan handles business development and client relationships. He works with organizations to understand their data challenges and translate those into actionable project scopes. His background in data science helps him bridge the gap between technical capabilities and business needs."
+        photo={rajPhoto}
+        linkedinUrl="https://www.linkedin.com/in/rajandes7/"
+        focusAreas={[
+          "Business Development",
+          "Client Relations",
+          "Project Scoping",
+          "Data Strategy",
+        ]}
+      />
+      <Founder
+        name="Jeremy Herzog"
+        title="Co-Founder & CTO"
+        description="Jeremy leads technical development, from architecture decisions to implementation. He builds data pipelines, analytics dashboards, and the infrastructure that makes everything work. With experience across startups and larger organizations, he focuses on building systems that are both functional and maintainable."
+        photo={jeremyPhoto}
+        linkedinUrl="https://www.linkedin.com/in/jeremy-herzog/"
+        focusAreas={[
+          "Full-Stack Engineering",
+          "System Architecture",
+          "Data Pipelines",
+          "Data Visualization",
+        ]}
+      />
+    </div>
+
+    <div class="bg-gray-900 text-white p-12">
+      <div class="max-w-4xl mx-auto text-center">
+        <h3 class="text-2xl md:text-3xl font-bold mb-6">Why We're Different</h3>
+        <p class="text-lg text-gray-300 font-light leading-relaxed mb-8">
+          Most consulting firms profit from extended engagements and billable
+          hours. They have every incentive to let you pay for bad ideas,
+          over-engineered solutions, and projects that drag on. We're different.
+          Our success is tied to your outcomes, not our invoices. We'll tell you
+          when an idea won't work, when you're overcomplicating things, and when
+          you should stop throwing money at a problem. As founders, we're in the
+          code, in the data, in the trenches—and we're honest about what
+          actually works.
+        </p>
+        <div class="grid md:grid-cols-3 gap-8">
+          <FeatureItem
+            iconName="check"
+            title="Honest Advice"
+            description="We'll tell you when something won't work. No sugar-coating, no billable hour padding."
           />
-        </a>
+          <FeatureItem
+            iconName="target"
+            title="Aligned Incentives"
+            description="Our success is tied to your outcomes, not our invoices. We win when you win."
+          />
+          <FeatureItem
+            iconName="zap"
+            title="Pragmatic Solutions"
+            description="We'll tell you when you're overcomplicating things. Simple solutions that actually work."
+          />
+        </div>
       </div>
-      <h3 class="text-lg md:text-xl font-light mb-2">Jeremy Herzog</h3>
-      <p class="text-gray-400 mb-4 font-light">Software Engineer</p>
     </div>
   </div>
 </LandingSegmentLayout>

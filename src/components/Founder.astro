@@ -1,0 +1,60 @@
+---
+interface Props {
+  name: string;
+  title: string;
+  description: string;
+  photo: ImageMetadata;
+  linkedinUrl: string;
+  focusAreas: string[];
+}
+
+const { name, title, description, photo, linkedinUrl, focusAreas } = Astro.props;
+---
+
+<div class="flex flex-col h-full">
+  <div class="flex flex-col items-center flex-grow mb-6">
+    <div class="w-64 h-64 mb-8 overflow-hidden shadow-lg">
+      <a
+        href={linkedinUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block w-full h-full"
+      >
+        <img
+          src={photo.src}
+          alt={name}
+          class="w-full h-full object-cover transition-all hover:scale-105"
+        />
+      </a>
+    </div>
+    <h3 class="text-2xl md:text-3xl font-bold mb-2 text-gray-900">
+      {name}
+    </h3>
+    <p class="text-lg text-gray-600 mb-4 font-light">{title}</p>
+    <p class="text-gray-600 font-light leading-relaxed mb-6 flex-grow">
+      {description}
+    </p>
+  </div>
+  <div class="space-y-2 mb-6">
+    <p class="text-sm font-bold text-gray-900 uppercase tracking-wider">
+      Focus Areas
+    </p>
+    <div class="flex flex-wrap gap-2 justify-center">
+      {focusAreas.map((area) => (
+        <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-light">
+          {area}
+        </span>
+      ))}
+    </div>
+  </div>
+  <a
+    href={linkedinUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="text-gray-700 hover:text-gray-900 font-medium text-sm flex items-center gap-2 justify-center"
+  >
+    Connect on LinkedIn
+    <span>→</span>
+  </a>
+</div>
+

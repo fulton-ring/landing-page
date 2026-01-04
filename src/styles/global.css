@@ -26,5 +26,46 @@
   }
 }
 
-/* body {
-  font-family: var(--font-sans); */
+/* Custom animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Gradient text utilities - greyscale only */
+.gradient-text {
+  color: #4b5563; /* gray-600 */
+}
+
+/* Glow effects - removed colored glows */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Code/mono styling */
+.font-mono {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: inherit;
+}

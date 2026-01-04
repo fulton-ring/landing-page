@@ -4,47 +4,70 @@ import guardianLogo from "../assets/guardian_logo.svg";
 import reutersLogo from "../assets/reuters_logo.svg";
 ---
 
-<div class="py-16 bg-gray-50">
+<div class="py-20 bg-white border-b border-gray-200">
   <div class="max-w-7xl mx-auto px-8">
-    <p class="text-center text-gray-500 text-sm uppercase tracking-wider mb-16">
-      Featured By
-    </p>
+    <div class="text-center mb-12">
+      <span
+        class="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-sm font-mono tracking-wider mb-4"
+      >
+        PRESS & RECOGNITION
+      </span>
+      <p class="text-gray-600 font-light text-lg max-w-2xl mx-auto">
+        Our work has been featured in leading publications and recognized for
+        its impact on data accessibility and intelligence systems.
+      </p>
+    </div>
 
     <div
-      class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center max-w-3xl mx-auto"
+      class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center max-w-4xl mx-auto mb-12"
     >
       <a
         href="https://www.fastcompany.com/91294411/trump-removed-an-online-tool-that-predicts-your-climate-risk-rogue-data-scientists-rebuilt-it"
-        class="flex justify-center md:justify-end"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex justify-center md:justify-end group cursor-pointer p-4 transition-all hover:scale-105"
       >
         <img
           src={fcLogo.src}
           alt="Fast Company Logo"
-          class="h-8 opacity-60 hover:opacity-100 transition-opacity invert"
+          class="h-8 w-auto opacity-60 group-hover:opacity-100 transition-all invert group-hover:brightness-110"
         />
       </a>
 
       <a
         href="https://www.theguardian.com/environment/ng-interactive/2025/mar/26/extreme-weather-risk-tool-fema-trump"
-        class="flex justify-center"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex justify-center group cursor-pointer p-4 transition-all hover:scale-105"
       >
         <img
           src={guardianLogo.src}
           alt="Guardian Logo"
-          class="h-12 opacity-60 hover:opacity-100 transition-opacity"
+          class="h-12 w-auto opacity-60 group-hover:opacity-100 transition-all group-hover:brightness-110"
         />
       </a>
 
       <a
         href="https://www.context.news/digital-rights/volunteers-on-right-side-of-history-fight-trump-data-purge"
-        class="flex justify-center md:justify-start"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex justify-center md:justify-start group cursor-pointer p-4 transition-all hover:scale-105"
       >
         <img
           src={reutersLogo.src}
           alt="Reuters Logo"
-          class="h-12 opacity-60 hover:opacity-100 transition-opacity"
+          class="h-12 w-auto opacity-60 group-hover:opacity-100 transition-all group-hover:brightness-110"
         />
       </a>
+    </div>
+
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-sm text-gray-500 font-light italic">
+        "Fulton Ring restored critical public access to climate risk data when
+        government tools were removed, preserving and rebuilding intelligence
+        systems that help communities understand their vulnerability to extreme
+        weather."
+      </p>
     </div>
   </div>
 </div>

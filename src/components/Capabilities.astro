@@ -1,91 +1,113 @@
 ---
 import LandingSegmentLayout from "../layouts/LandingSegmentLayout.astro";
+import CapabilityCard from "./CapabilityCard.astro";
+
+const capabilities: Array<{
+  number: string;
+  title: string;
+  description: string;
+  bulletPoints: string[];
+}> = [
+  {
+    number: "01",
+    title: "Data Orchestration & Ingestion",
+    description:
+      "We build automated pipelines that ingest, normalize, and preserve data from hundreds of disparate sources—databases, APIs, IoT sensors, documents, spreadsheets, and legacy systems. Our intelligent extraction engines transform unstructured content into structured knowledge graphs, ensuring critical data remains accessible even when sources disappear.",
+    bulletPoints: [
+      "Ingest data continuously or in scheduled batches",
+      "Preserve and restore data from at-risk sources",
+      "Extract structured insights from any document type",
+      "Automatically adapt to changing data formats",
+      "Trace data flow across your entire system",
+    ],
+  },
+  {
+    number: "02",
+    title: "Spatial & Time Series Intelligence",
+    description:
+      "Our custom AI models specialize in spatial and time series analytics—understanding both where things happen and when. We build forecasting models, spatial pattern recognition, and temporal anomaly detection tailored to your domain.",
+    bulletPoints: [
+      "Forecast future trends with domain-tuned models",
+      "Reveal hidden patterns in location data",
+      "Catch anomalies as they emerge over time",
+      "Layer maps with intelligent insights",
+    ],
+  },
+  {
+    number: "03",
+    title: "Interactive Intelligence Dashboards",
+    description:
+      "We build custom analytics dashboards that make complex data accessible to decision-makers. From executive dashboards to operational control centers, our interfaces enable real-time monitoring, exploration, and action.",
+    bulletPoints: [
+      "Watch metrics update as events unfold",
+      "Explore data through interactive maps",
+      "Ask questions in plain English",
+      "Control access based on user roles",
+    ],
+  },
+  {
+    number: "04",
+    title: "Knowledge Graph Architecture",
+    description:
+      "We construct organizational knowledge graphs that map relationships across your entire data ecosystem. This semantic layer enables complex queries, relationship discovery, and contextual intelligence that traditional databases can't provide.",
+    bulletPoints: [
+      "Merge duplicate records into single entities",
+      "Uncover connections you didn't know existed",
+      "Query complex relationships in seconds",
+      "Analyze how relationships evolve over time",
+    ],
+  },
+  {
+    number: "05",
+    title: "Automated Decision Systems",
+    description:
+      "We build rule engines and automated workflows that translate intelligence into action. From alerting systems to autonomous response protocols, we enable your organization to act on insights at machine speed.",
+    bulletPoints: [
+      "Trigger actions automatically when conditions are met",
+      "Balance multiple factors in every decision",
+      "Test variations to continuously improve outcomes",
+      "Keep humans in control of critical choices",
+    ],
+  },
+  {
+    number: "06",
+    title: "Infrastructure & DevOps",
+    description:
+      "We design and deploy production-grade infrastructure that scales from prototype to mission-critical operations. Our systems are built for reliability, security, and performance—whether on-premises, cloud, or hybrid architectures.",
+    bulletPoints: [
+      "Scale workloads automatically with demand",
+      "Deploy anywhere—cloud, on-prem, or hybrid",
+      "Lock down systems to meet compliance standards",
+      "Monitor performance with full-stack visibility",
+    ],
+  },
+];
 ---
 
 <LandingSegmentLayout>
-  <h2 class="text-2xl md:text-4xl font-light text-center mb-16 mt-12">
-    What We Do
-  </h2>
-
-  <div class="grid md:grid-cols-3 gap-12">
-    <div class="flex flex-col items-center text-center">
-      <div class="bg-blue-50 p-6 rounded-full mb-6">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-database"
-          ><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path
-            d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"
-          ></path></svg
-        >
-      </div>
-      <h3 class="text-lg md:text-xl font-light mb-4">Smart Data Collection</h3>
-      <p class="text-gray-600 font-light">
-        We gather valuable data from diverse sources including websites,
-        databases, IoT sensors, raw PowerPoints and PDFs. Our automated
-        intellegence systems ensure you have the most current and relevant
-        information.
+  <div class="py-20" id="capabilities">
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-sm font-mono tracking-wider mb-6">
+        CORE CAPABILITIES
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+        Operational Intelligence<br />
+        <span class="gradient-text">At Scale</span>
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light">
+        We build custom analytics tools that preserve, restore, and transform fragmented organizational data into cohesive decision-making systems. Our technology-agnostic approach ensures your solutions are built on the right foundation for your specific needs.
       </p>
     </div>
 
-    <div class="flex flex-col items-center text-center">
-      <div class="bg-blue-50 p-6 rounded-full mb-6">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
-          ></path>
-        </svg>
-      </div>
-      <h3 class="text-lg md:text-xl font-light mb-4">
-        Interactive Visualization
-      </h3>
-      <p class="text-gray-600 font-light">
-        Transform complex data into clear insights through custom dashboards,
-        interactive maps, and AI-powered interfaces. We build tools that make
-        your data accessible and actionable.
-      </p>
-    </div>
-
-    <div class="flex flex-col items-center text-center">
-      <div class="bg-blue-50 p-6 rounded-full mb-6">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-8 w-8"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-zap"
-          ><path
-            d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"
-          ></path></svg
-        >
-      </div>
-      <h3 class="text-lg md:text-xl font-light mb-4">
-        Predictive Intelligence
-      </h3>
-      <p class="text-gray-600 font-light">
-        Leverage advanced AI and machine learning to uncover patterns and
-        predict trends. Our models help you make data-driven decisions and stay
-        ahead of market changes.
-      </p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 items-stretch">
+      {capabilities.map((capability) => (
+        <CapabilityCard
+          number={capability.number}
+          title={capability.title}
+          description={capability.description}
+          bulletPoints={capability.bulletPoints}
+        />
+      ))}
     </div>
   </div>
 </LandingSegmentLayout>

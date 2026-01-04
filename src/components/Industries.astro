@@ -1,0 +1,122 @@
+---
+import LandingSegmentLayout from "../layouts/LandingSegmentLayout.astro";
+import IndustryCard from "./IndustryCard.astro";
+
+const industries: Array<{
+  iconName: "Zap" | "Factory" | "Home" | "Shield" | "Store" | "MapPin";
+  title: string;
+  description: string;
+  bulletPoints: string[];
+}> = [
+  {
+    iconName: "Zap",
+    title: "Power Plants & Utilities",
+    description:
+      "Monitor equipment performance over time, predict failures using sensor time series, optimize operations across geographic locations, and manage grid reliability with spatial-temporal analytics.",
+    bulletPoints: [
+      "Forecast energy demand & capacity weeks in advance",
+      "Optimize grid operations across entire networks",
+      "Prevent equipment failures with sensor intelligence",
+      "Track asset health across distributed facilities",
+    ],
+  },
+  {
+    iconName: "Factory",
+    title: "Manufacturing",
+    description:
+      "Track production metrics over time, monitor equipment across facility locations, predict maintenance needs from temporal patterns, and optimize operations using spatial-temporal intelligence.",
+    bulletPoints: [
+      "Analyze production efficiency trends in real-time",
+      "Monitor operations across all facility locations",
+      "Anticipate equipment issues before they occur",
+      "Streamline supply chains with location intelligence",
+    ],
+  },
+  {
+    iconName: "Home",
+    title: "Real Estate",
+    description:
+      "Analyze property values over time, track market trends by location, predict demand using spatial-temporal patterns, and optimize portfolio decisions with geographic and temporal intelligence.",
+    bulletPoints: [
+      "Project property values with historical intelligence",
+      "Uncover market opportunities by neighborhood",
+      "Build portfolios based on location dynamics",
+      "Identify emerging demand patterns early",
+    ],
+  },
+  {
+    iconName: "Shield",
+    title: "Government",
+    description:
+      "Preserve and restore critical public data, monitor infrastructure over time, track service delivery across geographic regions, and make intelligence systems accessible to communities that depend on them.",
+    bulletPoints: [
+      "Preserve critical data for public access",
+      "Keep infrastructure health visible over time",
+      "Deliver services efficiently across all regions",
+      "Direct resources where they're needed most",
+      "Plan smarter with historical trend analysis",
+    ],
+  },
+  {
+    iconName: "Store",
+    title: "Retail",
+    description:
+      "Forecast demand over time by location, optimize inventory across store networks, analyze customer patterns using spatial-temporal data, and make location-based decisions with time series intelligence.",
+    bulletPoints: [
+      "Predict demand spikes for every store location",
+      "Balance inventory across your entire network",
+      "Decode customer behavior by region & season",
+      "Make data-driven site selection decisions",
+    ],
+  },
+  {
+    iconName: "MapPin",
+    title: "Other Industries",
+    description:
+      "Our spatial and time series intelligence approach applies to any industry where location and temporal patterns matter. We build custom analytics tools tailored to your specific use case.",
+    bulletPoints: [
+      "Build analytics tailored to your unique challenges",
+      "Deploy forecasting models for your domain",
+      "Create location-aware intelligence platforms",
+      "Discover patterns hidden in your data",
+    ],
+  },
+];
+---
+
+<LandingSegmentLayout>
+  <div class="py-20 bg-gray-50" id="industries">
+    <div class="text-center mb-16">
+      <span
+        class="inline-block px-4 py-2 bg-gray-200 text-gray-700 text-sm font-mono tracking-wider mb-6"
+      >
+        INDUSTRIES SERVED
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+        Intelligence That<br />
+        <span class="gradient-text">Transforms Industries</span>
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light">
+        We specialize in spatial and time series intelligence—analytics that
+        understand both where things happen and when. Our custom tools are built
+        for industries where location and temporal patterns drive
+        decision-making.
+      </p>
+    </div>
+
+    <div
+      class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto px-4"
+    >
+      {
+        industries.map((industry) => (
+          <IndustryCard
+            iconName={industry.iconName}
+            title={industry.title}
+            description={industry.description}
+            bulletPoints={industry.bulletPoints}
+          />
+        ))
+      }
+    </div>
+  </div>
+</LandingSegmentLayout>

@@ -1,0 +1,98 @@
+---
+import LandingSegmentLayout from "../layouts/LandingSegmentLayout.astro";
+---
+
+<LandingSegmentLayout>
+  <div class="py-20">
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-2 bg-gray-100 text-gray-700 text-sm font-mono tracking-wider mb-6">
+        TECHNOLOGY STACK
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+        Built on<br />
+        <span class="gradient-text">Cutting-Edge Infrastructure</span>
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-light">
+        We leverage the best tools and frameworks in the industry, but we're not dogmatic. We choose the right technology for each problem, ensuring your data infrastructure is built on a foundation that will scale with you.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      <div class="p-6 bg-gray-50 border border-gray-200 hover:border-gray-900 transition-all">
+        <h4 class="font-bold text-gray-900 mb-3 font-mono text-sm">DATA & STORAGE</h4>
+        <ul class="text-sm text-gray-600 space-y-2 font-light">
+          <li>• PostgreSQL / TimescaleDB</li>
+          <li>• ClickHouse</li>
+          <li>• Apache Kafka</li>
+          <li>• Redis</li>
+          <li>• S3</li>
+          <li>• Elasticsearch</li>
+          <li>• Neo4j</li>
+        </ul>
+      </div>
+
+      <div class="p-6 bg-gray-50 border border-gray-200 hover:border-gray-900 transition-all">
+        <h4 class="font-bold text-gray-900 mb-3 font-mono text-sm">AI & ML</h4>
+        <ul class="text-sm text-gray-600 space-y-2 font-light">
+          <li>• PyTorch / TensorFlow</li>
+          <li>• Chronos</li>
+          <li>• Time series libraries (Prophet, ARIMA)</li>
+          <li>• Geospatial tools (PostGIS, GeoPandas)</li>
+          <li>• Scikit-learn</li>
+          <li>• Custom spatial-temporal models</li>
+          <li>• Forecasting & anomaly detection</li>
+        </ul>
+      </div>
+
+      <div class="p-6 bg-gray-50 border border-gray-200 hover:border-gray-900 transition-all">
+        <h4 class="font-bold text-gray-900 mb-3 font-mono text-sm">COMPUTE & ORCHESTRATION</h4>
+        <ul class="text-sm text-gray-600 space-y-2 font-light">
+          <li>• Kubernetes</li>
+          <li>• Docker / Podman</li>
+          <li>• Dagster</li>
+          <li>• Metaflow</li>
+          <li>• RabbitMQ</li>
+          <li>• AWS / GCP / Azure</li>
+          <li>• Terraform / Pulumi</li>
+        </ul>
+      </div>
+
+      <div class="p-6 bg-gray-50 border border-gray-200 hover:border-gray-900 transition-all">
+        <h4 class="font-bold text-gray-900 mb-3 font-mono text-sm">FRONTEND & APIS</h4>
+        <ul class="text-sm text-gray-600 space-y-2 font-light">
+          <li>• React / Next.js</li>
+          <li>• TypeScript</li>
+          <li>• TanStack</li>
+          <li>• FastAPI</li>
+          <li>• GraphQL / REST</li>
+          <li>• WebSockets</li>
+          <li>• D3.js / Observable</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-gray-900 text-white p-10">
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold mb-6 text-center">Technology Agnostic</h3>
+        <p class="text-lg text-gray-300 font-light leading-relaxed text-center mb-8">
+          We don't lock you into a single vendor or technology stack. The analytics tools we build run on-premises, in the cloud, or in hybrid configurations. We integrate with your existing infrastructure and can adapt as your needs evolve.
+        </p>
+        <div class="grid md:grid-cols-3 gap-6 text-center">
+          <div class="p-6 bg-gray-800">
+            <div class="text-xl font-bold mb-2">On-Premises</div>
+            <div class="text-sm text-gray-400 font-light">Full control, maximum security</div>
+          </div>
+          <div class="p-6 bg-gray-800">
+            <div class="text-xl font-bold mb-2">Cloud Native</div>
+            <div class="text-sm text-gray-400 font-light">Scalable, managed infrastructure</div>
+          </div>
+          <div class="p-6 bg-gray-800">
+            <div class="text-xl font-bold mb-2">Hybrid</div>
+            <div class="text-sm text-gray-400 font-light">Best of both worlds</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</LandingSegmentLayout>
+

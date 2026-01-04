@@ -1,0 +1,22 @@
+---
+import { Check, Target, Zap } from "lucide-astro";
+
+interface Props {
+  iconName: "check" | "target" | "zap";
+  title: string;
+  description: string;
+}
+
+const { iconName, title, description } = Astro.props;
+---
+
+<div class="text-center">
+  <div class="flex justify-center mb-2">
+    {iconName === "check" && <Check class="w-8 h-8 text-white" />}
+    {iconName === "target" && <Target class="w-8 h-8 text-white" />}
+    {iconName === "zap" && <Zap class="w-8 h-8 text-white" />}
+  </div>
+  <div class="text-gray-400 text-sm font-light mb-2">{title}</div>
+  <div class="text-gray-300 text-sm font-light">{description}</div>
+</div>
+
