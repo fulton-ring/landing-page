@@ -1,31 +1,6 @@
 ---
 import logo from "../assets/fulton-ring-logo.svg";
+import Navigation from "./Navigation";
 ---
 
-<div class="border-b border-gray-200 bg-white sticky top-0 z-50 backdrop-blur-sm bg-white/95">
-  <div class="mx-auto px-6 md:px-8 py-4 md:py-6">
-    <div class="flex items-center justify-between">
-      <a href="/" class="block">
-        <img src={logo.src} alt="Fulton Ring" class="h-8 md:h-12" />
-      </a>
-      <nav class="hidden md:flex items-center gap-8">
-        <a href="#team" class="text-gray-700 hover:text-gray-900 font-light text-sm transition-colors">Team</a>
-        <a href="#case-studies" class="text-gray-700 hover:text-gray-900 font-light text-sm transition-colors">Case Studies</a>
-        <a href="#solutions" class="text-gray-700 hover:text-gray-900 font-light text-sm transition-colors">Solutions</a>
-        <a href="#capabilities" class="text-gray-700 hover:text-gray-900 font-light text-sm transition-colors">Capabilities</a>
-        <a href="#industries" class="text-gray-700 hover:text-gray-900 font-light text-sm transition-colors">Industries</a>
-        <a
-          href="https://calendly.com/fulton-ring"
-          class="px-6 py-2 bg-gray-900 text-white hover:bg-gray-800 no-underline font-medium text-sm transition-colors edge-border"
-        >
-          Get Started
-        </a>
-      </nav>
-      <button class="md:hidden text-gray-700" id="mobile-menu-button">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-  </div>
-</div>
+<Navigation client:load logoSrc={logo.src} />
